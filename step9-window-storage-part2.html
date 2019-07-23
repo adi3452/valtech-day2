@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Storage</title>
+    <script>
+        var name,mail,password;
+        window.addEventListener("load", function(){
+            document.getElementById("submitBtn").addEventListener("click", submitHandler)
+            document.getElementById("readBtn").addEventListener("click", readHandler)
+        });
+        function submitHandler(){
+            var nameip = document.getElementById("nameip");
+            var mailip = document.getElementById("mailip");
+            var passip = document.getElementById("passip");
+
+            name = nameip.value;
+            mail = mailip.value;
+            password = passip.value;
+
+            nameip.value = "";
+            mailip.value = "";
+            passip.value = "";
+        }
+        function readHandler(){
+            document.getElementById("nameop").innerHTML = name;
+            document.getElementById("mailop").innerHTML = mail;
+            document.getElementById("passop").innerHTML = password;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td> Name : </td>
+            <td> 
+                <input id="nameip" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td> eMail : </td>
+            <td> 
+                <input id="mailip" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td> Password : </td>
+            <td> 
+                <input id="passip" type="password">
+            </td>
+        </tr>
+        <tr>
+            <td> &nbsp; </td>
+            <td> 
+                <button id="submitBtn" type="submit">Login</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <fieldset>
+        <legend>User Data</legend>
+        <label>User Name :  <output id="nameop"></output> </label>
+        <br>
+        <label>User eMail :  <output id="mailop"></output> </label>
+        <br>
+        <label>User Password :  <output id="passop"></output> </label>
+        <br>
+        <button id="readBtn">Get Data</button>
+    </fieldset>
+</body>
+</html>
